@@ -22,6 +22,11 @@ def sens4():
         time.sleep(1)
 
 
+def sens5():
+    for i in range (5):
+        print(f"{i+1} 90°C")
+        time.sleep(1)
+
 
 def sensor1():
     thread = threading.Thread(target=sens1)
@@ -31,8 +36,6 @@ def sensor1():
     print("Sensor 1 terminado")
     print("    ")
     print("    ")
-
-
 
 
 def sensor2():
@@ -62,9 +65,19 @@ def sensor4():
     print("    ")
     print("    ")
 
+def sensor5():
+    thread = threading.Thread(target=sens5)
+    print("Sensor 5 empieza a medir la temperatura")
+    thread.start()
+    thread.join()
+    print("Sensor 5 terminado")
+    print("    ")
+    print("    ")
+
 
 if __name__ == "__main__":
     sensor1()
     sensor2()
     sensor3()
     sensor4()
+    sensor5()

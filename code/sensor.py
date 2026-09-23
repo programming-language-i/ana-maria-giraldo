@@ -1,83 +1,31 @@
-import threading
-import time
+import threading, time
 
-def sens1():
-    for i in range (5):
-        print(f"{i+1} 20°C")
+
+def sensor(numero, temperatura):
+    print(f"{numero} sensor empieza a medir la temperatura")
+
+    for i in range(5):
+        print(f"{numero} - {i+1}: temperatura {temperatura} °C")
+
         time.sleep(1)
 
-def sens2():
-    for i in range (5):
-        print(f"{i+1} 30°C")
-        time.sleep(1)
+    print("termino")
 
-def sens3():
-    for i in range (5):
-        print(f"{i+1} 60°C")
-        time.sleep(1)
+if __name__ == "__main__":  
+    threads = [
+      threading.Thread(target=sensor, args=("sensor1",20)),
+      threading.Thread(target=sensor, args=("sensor2",30)),
+      threading.Thread(target=sensor, args=("sensor3",40)),
+      threading.Thread(target=sensor, args=("sensor4",50)),
+      threading.Thread(target=sensor, args=("sensor5",60)),
+    ]
 
-def sens4():
-    for i in range (5):
-        print(f"{i+1} 80°C")
-        time.sleep(1)
+    for thread in threads:
+        thread.start()
 
+    for thread in threads:
+        thread.join()
 
-def sens5():
-    for i in range (5):
-        print(f"{i+1} 90°C")
-        time.sleep(1)
+    print("Todos los sensores han terminado de medir la temperatura")        
 
 
-def sensor1():
-    thread = threading.Thread(target=sens1)
-    print("Sensor 1 empieza a medir la temperatura")
-    thread.start()
-    thread.join()
-    print("Sensor 1 terminado")
-    print("    ")
-    print("    ")
-
-
-def sensor2():
-    thread = threading.Thread(target=sens2)
-    print("Sensor 2 empieza a medir la temperatura")
-    thread.start()
-    thread.join()
-    print("Sensor 2 terminado")
-    print("    ")
-    print("    ")
-
-def sensor3():
-    thread = threading.Thread(target=sens3)
-    print("Sensor 3 empieza a medir la temperatura")
-    thread.start()
-    thread.join()
-    print("Sensor 3 terminado")
-    print("    ")
-    print("    ")
-
-def sensor4():
-    thread = threading.Thread(target=sens4)
-    print("Sensor 4 empieza a medir la temperatura")
-    thread.start()
-    thread.join()
-    print("Sensor 4 terminado")
-    print("    ")
-    print("    ")
-
-def sensor5():
-    thread = threading.Thread(target=sens5)
-    print("Sensor 5 empieza a medir la temperatura")
-    thread.start()
-    thread.join()
-    print("Sensor 5 terminado")
-    print("    ")
-    print("    ")
-
-
-if __name__ == "__main__":
-    sensor1()
-    sensor2()
-    sensor3()
-    sensor4()
-    sensor5()

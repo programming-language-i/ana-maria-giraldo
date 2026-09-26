@@ -4,8 +4,8 @@ import threading
 
 
 class Contador(threading.Thread):
-    def _init_(self, nombre):
-        super()._init_(name=nombre)
+    def __init__(self, nombre):
+        super().__init__(name=nombre)
         self.total = 0
         self.eventos = [] 
 

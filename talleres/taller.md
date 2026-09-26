@@ -285,11 +285,11 @@ practica-clase/
 
 Marcar antes de dar el taller por terminado:
 
-- [ ] Explico con un ejemplo la diferencia entre concurrencia y paralelismo.
-- [ ] Sé por qué `start()` y `join()` en el mismo bucle vuelven secuencial el programa.
-- [ ] Sé qué hace y qué no hace el GIL.
-- [ ] Creo un hilo por herencia con `super().__init__()` y `run()`, con estado por instancia.
-- [ ] Sé qué se pierde al usar un hilo daemon.
-- [ ] Recupero el resultado y la excepción de un hilo, con herencia y con pool.
-- [ ] Sé por qué los procesos no ven la memoria del padre y por qué necesitan la guarda `if __name__ == "__main__":`.
-- [ ] Elijo entre hilos y procesos preguntando si el programa espera o calcula.
+- [✓] Explico con un ejemplo la diferencia entre concurrencia y paralelismo.
+- [✓] Sé por qué `start()` y `join()` en el mismo bucle vuelven secuencial el programa.
+- [✓] Sé qué hace y qué no hace el GIL.
+- [✓] Creo un hilo por herencia con `super().__init__()` y `run()`, con estado por instancia.
+- [✓] Sé qué se pierde al usar un hilo daemon.
+- [✓] Recupero el resultado y la excepción de un hilo, con herencia y con pool.
+- [✓] Sé por qué los procesos no ven la memoria del padre y por qué necesitan la guarda `if __name__ == "__main__":`.
+- [✓] Elijo entre hilos y procesos preguntando si el programa espera o calcula.
